@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HandleDataService } from '../handle-data.service';
 
 interface excerpt {
   origin: string,
@@ -14,33 +15,16 @@ interface excerpt {
   styleUrls: ['./excerpt-list.component.css']
 })
 export class ExcerptListComponent implements OnInit {
-  public excerptData: excerpt[] = [
-    {
-      origin: "something far out",
-      category: "Film",
-      excerpt: "Life do be like that sometimes",
-      thoughts: "Wow, that's really deep",
-      date: Date.now()
-    },
-    {
-      origin: "Thomas Jefferson",
-      category: "Book",
-      excerpt: "God I hate the UK and King George VI",
-      thoughts: "I dunno I'm kinda offended",
-      date: Date.now()
-    },
-    {
-      origin: "Jojos Amazing Adventure",
-      category: "TV",
-      excerpt: "The North Wind made the Vikings",
-      thoughts: "I suppose it's true",
-      date: Date.now()
-    },
-  ]
+  public excerptData: excerpt[] = []
 
-  constructor() { }
+  constructor(private handleData: HandleDataService) {
+    this.getExcerptData();
+  }
 
   ngOnInit(): void {
   }
 
+  getExcerptData() {
+    this.excerptData = this.handleData.excerptData;
+  }
 }

@@ -2,31 +2,34 @@
   <div class="container-fluid">
     <span class="navbar-brand mb-0 h1">Expert Excerpts </span>
     <span class="navbar-text">
-      <app-modal>
+      <app-modal (newClickEvent)="addItem()">
         <div header>Add An Excerpt</div>
         <div body>
-          <form>
+          <form [formGroup]="excerptForm">
             <div class="form-group">
               <label for="exampleFormControlInput1">Origin</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+              <input [formControl]="excerptForm.get('origin')" type="email" class="form-control"
+                id="exampleFormControlInput1" placeholder="Where does it come from?">
             </div>
             <div class="form-group">
               <label for="exampleFormControlSelect1">Category</label>
-              <select class="form-control" id="exampleFormControlSelect1">
-                <option value="1">Fiction</option>
-                <option value="1">Non-Fiction</option>
-                <option value="2">TV</option>
-                <option value="3">Movies</option>
-                <option value="3">Conversation</option>
+              <select [formControl]="excerptForm.get('category')" class="form-control" id="exampleFormControlSelect1">
+                <option value="Fiction">Fiction</option>
+                <option value="Non-Fiction">Non-Fiction</option>
+                <option value="TV">TV</option>
+                <option value="Movies">Movies</option>
+                <option value="Conversation">Conversation</option>
               </select>
             </div>
             <div class="form-group">
               <label for="exampleFormControlTextarea1">Excerpt</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              <textarea [formControl]="excerptForm.get('excerpt')" class="form-control" id="exampleFormControlTextarea1"
+                rows="3"></textarea>
             </div>
             <div class="form-group">
               <label for="exampleFormControlTextarea1">Thoughts</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              <textarea [formControl]="excerptForm.get('thoughts')" class="form-control"
+                id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
           </form>
         </div>

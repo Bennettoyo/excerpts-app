@@ -3,7 +3,7 @@
     <h4 class="modal-title" id="modal-basic-title">
       <ng-content select="[header]"></ng-content>
     </h4>
-    <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+    <button type="button" class="btn-close" aria-label="Close" (click)="onClick()"></button>
   </div>
   <div class="modal-body">
     <p>
@@ -11,7 +11,7 @@
     </p>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
+    <button type="button" class="btn btn-outline-dark" (click)="onClick()">Save</button>
   </div>
 </ng-template>
 
