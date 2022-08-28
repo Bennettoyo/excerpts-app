@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HandleDataService } from '../handle-data.service';
 
 interface excerpt {
-  origin: string,
+  source: string,
   category: string,
   excerpt: string,
   thoughts: string,

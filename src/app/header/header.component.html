@@ -2,36 +2,10 @@
   <div class="container-fluid">
     <span class="navbar-brand mb-0 h1">Expert Excerpts </span>
     <span class="navbar-text">
-      <app-modal (newClickEvent)="addItem()">
+      <app-modal>
         <div header>Add An Excerpt</div>
         <div body>
-          <form [formGroup]="excerptForm">
-            <div class="form-group">
-              <label for="exampleFormControlInput1">Origin</label>
-              <input [formControl]="excerptForm.get('origin')" type="email" class="form-control"
-                id="exampleFormControlInput1" placeholder="Where does it come from?">
-            </div>
-            <div class="form-group">
-              <label for="exampleFormControlSelect1">Category</label>
-              <select [formControl]="excerptForm.get('category')" class="form-control" id="exampleFormControlSelect1">
-                <option value="Fiction">Fiction</option>
-                <option value="Non-Fiction">Non-Fiction</option>
-                <option value="TV">TV</option>
-                <option value="Movies">Movies</option>
-                <option value="Conversation">Conversation</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="exampleFormControlTextarea1">Excerpt</label>
-              <textarea [formControl]="excerptForm.get('excerpt')" class="form-control" id="exampleFormControlTextarea1"
-                rows="3"></textarea>
-            </div>
-            <div class="form-group">
-              <label for="exampleFormControlTextarea1">Thoughts</label>
-              <textarea [formControl]="excerptForm.get('thoughts')" class="form-control"
-                id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
-          </form>
+          <app-excerpt-form></app-excerpt-form>
         </div>
       </app-modal>
     </span>

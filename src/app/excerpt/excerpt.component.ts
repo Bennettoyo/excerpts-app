@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 interface excerpt {
-  origin: string,
+  source: string,
   category: string,
   excerpt: string,
   thoughts: string,

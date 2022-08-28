@@ -1,0 +1,14 @@
+<form [formGroup]="excerptForm" (ngSubmit)="onSubmit()">
+  <app-select label="Category" [control]="excerptForm.get('category')">
+    <option value="Fiction">Fiction</option>
+    <option value="Non-Fiction">Non-Fiction</option>
+    <option value="TV">TV</option>
+    <option value="Movies">Movies</option>
+    <option value="Conversation">Conversation</option>
+  </app-select>
+  <app-input label="Source" [control]="excerptForm.get('source')"></app-input>
+  <app-textarea label="Excerpt" [control]="excerptForm.get('excerpt')" [rows]="3"></app-textarea>
+  <app-textarea label="Thoughts" [control]="excerptForm.get('thoughts')" [rows]="3"></app-textarea>
+  <button type="button" class="btn btn-outline-dark" [disabled]="excerptForm.invalid" type="submit">Submit</button>
+  <!-- {{excerptForm.value | json}} -->
+</form>

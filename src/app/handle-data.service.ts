@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 interface excerpt {
-  origin: string,
+  source: string,
   category: string,
   excerpt: string,
   thoughts: string,
@@ -14,21 +14,21 @@ interface excerpt {
 export class HandleDataService {
   public excerptData: excerpt[] = [
     {
-      origin: "something far out",
+      source: "something far out",
       category: "Film",
       excerpt: "Life do be like that sometimes",
       thoughts: "Wow, that's really deep",
       date: Date.now()
     },
     {
-      origin: "Thomas Jefferson",
+      source: "Thomas Jefferson",
       category: "Book",
       excerpt: "God I hate the UK and King George VI",
       thoughts: "I dunno I'm kinda offended",
       date: Date.now()
     },
     {
-      origin: "Jojos Amazing Adventure",
+      source: "Jojos Amazing Adventure",
       category: "TV",
       excerpt: "The North Wind made the Vikings",
       thoughts: "I suppose it's true",
@@ -43,6 +43,6 @@ export class HandleDataService {
   }
 
   postExcerpt(excerpt: any) {
-    this.excerptData.push(excerpt.value);
+    this.excerptData.unshift(excerpt.value);
   }
 }

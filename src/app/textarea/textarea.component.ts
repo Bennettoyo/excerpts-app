@@ -2,13 +2,14 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
-  selector: 'app-select',
-  templateUrl: './select.component.html',
-  styleUrls: ['./select.component.css']
+  selector: 'app-textarea',
+  templateUrl: './textarea.component.html',
+  styleUrls: ['./textarea.component.css']
 })
-export class SelectComponent implements OnInit {
+export class TextareaComponent implements OnInit {
   @Input() control: FormControl | undefined;
   @Input() label: string | undefined;
+  @Input() rows: number | undefined;
 
   constructor() { }
 

@@ -12,6 +12,8 @@ import { HeaderComponent } from './header/header.component';
 import { SelectComponent } from './select/select.component';
 import { ModalComponent } from './modal/modal.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ExcerptFormComponent } from './excerpt-form/excerpt-form.component';
+import { TextareaComponent } from './textarea/textarea.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HeaderComponent,
     SelectComponent,
     ModalComponent,
+    ExcerptFormComponent,
+    TextareaComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,5 @@
-<p>input works!</p>
+<div class="form-group">
+  <label for="exampleFormControlInput1">{{label}}</label>
+  <input [ngClass]="{'error' : control?.errors?.['required'] && control?.touched}" class="form-control error"
+    [formControl]="$any(control)" id="exampleFormControlInput1">
+</div>

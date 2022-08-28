@@ -1,4 +1,11 @@
-<app-select></app-select>
+<select class="form-select" aria-label="Default select example">
+  <option selected>All</option>
+  <option value="1">Fiction</option>
+  <option value="1">Non-Fiction</option>
+  <option value="2">TV</option>
+  <option value="3">Movies</option>
+  <option value="3">Conversation</option>
+</select>
 <ng-container *ngFor="let excerpt of excerptData">
   <app-excerpt [props]="excerpt"></app-excerpt>
 </ng-container>
