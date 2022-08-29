@@ -1,12 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-
-interface excerpt {
-  source: string,
-  category: string,
-  excerpt: string,
-  thoughts: string,
-  date: number
-}
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { Output, EventEmitter } from '@angular/core';
+import { IExcerpt } from '../interfaces/Excerpt';
 
 @Component({
   selector: 'app-excerpt',
@@ -14,11 +9,18 @@ interface excerpt {
   styleUrls: ['./excerpt.component.css']
 })
 export class ExcerptComponent implements OnInit {
-  @Input() props: excerpt | undefined;
+  faTrash = faTrash;
+  @Input() props: IExcerpt | undefined;
+  @Output() deleteEvent = new EventEmitter<string>();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  delete(id: string | undefined) {
+    console.log("excerpt component", id);
+    this.deleteEvent.emit(id);
   }
 
 }

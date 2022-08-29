@@ -1,13 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/internal/Observable';
 import { HandleDataService } from '../handle-data.service';
-
-interface excerpt {
-  source: string,
-  category: string,
-  excerpt: string,
-  thoughts: string,
-  date: number
-}
+import { IExcerpt } from '../interfaces/Excerpt';
+import { filter, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-excerpt-list',
@@ -15,16 +10,36 @@ interface excerpt {
   styleUrls: ['./excerpt-list.component.css']
 })
 export class ExcerptListComponent implements OnInit {
-  public excerptData: excerpt[] = []
+  public excerptData: Observable<IExcerpt[]> = new Observable()
 
   constructor(private handleData: HandleDataService) {
-    this.getExcerptData();
   }
 
   ngOnInit(): void {
+    this.fetchExcerpts();
   }
 
-  getExcerptData() {
-    this.excerptData = this.handleData.excerptData;
+  onChange(value: string) {
+    if (value !== 'All') {
+      this.handleData.filterExcerpts(value);
+    } else {
+      this.fetchExcerpts()
+    }
+  }
+
+  private fetchExcerpts(): void {
+    this.excerptData = this.handleData.getExcerpts();
+  }
+
+
+  deleteExcerpt(id: string): void {
+    console.log(id);
+    this.handleData.deleteExcerpt(id).subscribe({
+      next: () => this.fetchExcerpts()
+    });
+  }
+
+  onScroll() {
+    console.log("scrolled!!");
   }
 }

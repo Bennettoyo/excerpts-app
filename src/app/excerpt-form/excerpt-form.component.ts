@@ -30,7 +30,15 @@ export class ExcerptFormComponent implements OnInit {
   onSubmit() {
     if (this.excerptForm.valid) {
       this.modalService.dismissAll();
-      this.handleData.postExcerpt(this.excerptForm);
+      this.handleData.createExcerpt(this.excerptForm.value).subscribe({
+        next: () => {
+          this.handleData.getExcerpts();
+        },
+        error: (error) => {
+          alert("Failed to create excerpt");
+          console.error(error);
+        }
+      });
       this.excerptForm.reset(
         this.excerptForm = new FormGroup({
           source: new FormControl('', [Validators.required]),

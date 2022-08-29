@@ -1,5 +1,7 @@
 <div class="card border-dark mb-3">
-  <div class="card-header">{{props?.category}}</div>
+    <div class="card-header container">
+      {{props?.category}} <fa-icon (click)="delete(props?._id)" size="lg" [icon]="faTrash"></fa-icon>
+    </div>
   <div class="card-body text-dark">
     <h5 class="card-title">{{props?.source}}</h5>
     <p class="card-text">"{{props?.excerpt}}"</p>

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { HandleDataService } from '../handle-data.service';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +9,7 @@ import { HandleDataService } from '../handle-data.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private modalService: NgbModal, private handleData: HandleDataService) {
+  constructor() {
   }
 
   ngOnInit(): void {
