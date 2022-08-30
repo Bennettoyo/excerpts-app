@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { InfiniteScrollModule } from "ngx-infinite-scroll";
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ExcerptListComponent } from './excerpt-list/excerpt-list.component';
@@ -16,6 +17,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ExcerptFormComponent } from './excerpt-form/excerpt-form.component';
 import { TextareaComponent } from './textarea/textarea.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing-module';
+import { PasswordCheckComponent } from './password-check/password-check.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
     ModalComponent,
     ExcerptFormComponent,
     TextareaComponent,
+    PasswordCheckComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,7 +40,9 @@ import { HttpClientModule } from '@angular/common/http';
     FontAwesomeModule,
     ReactiveFormsModule,
     InfiniteScrollModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

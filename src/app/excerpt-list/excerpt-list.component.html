@@ -1,13 +1,13 @@
 <!-- <select class="form-select" aria-label="Default select example"> -->
-<select class="form-select" aria-label="Default select example" (change)="onChange($any($event).target.value)">
+<!-- <select class="form-select" aria-label="Default select example" (change)="onChange($any($event).target.value)">
   <option value="All" selected>All</option>
   <option value="Fiction">Fiction</option>
   <option value="Non-Fiction">Non-Fiction</option>
   <option value="TV">TV</option>
   <option value="Movies">Movies</option>
   <option value="Conversation">Conversation</option>
-</select>
-<div infinite-scroll [infiniteScrollDistance]="1" [infiniteScrollUpDistance]="2" [infiniteScrollThrottle]="10"
+</select> -->
+<div class="excerpt-list" infinite-scroll [infiniteScrollDistance]="1" [infiniteScrollUpDistance]="2" [infiniteScrollThrottle]="10"
   [infiniteScrollThrottle]="300">
   <ng-container *ngFor="let excerpt of excerptData | async">
     <app-excerpt (deleteEvent)="deleteExcerpt($event)" [props]="excerpt"></app-excerpt>

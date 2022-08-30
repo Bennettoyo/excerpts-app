@@ -23,4 +23,9 @@ export class ExcerptComponent implements OnInit {
     this.deleteEvent.emit(id);
   }
 
+  clickMethod(props: any) {
+    if (confirm("Are you sure to delete " + props.excerpt)) {
+      this.deleteEvent.emit(props._id);
+    }
+  }
 }

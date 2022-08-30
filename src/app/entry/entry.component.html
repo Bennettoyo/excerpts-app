@@ -1,1 +1,10 @@
-<p>entry works!</p>
+<div class="container">
+  <div class="input-group mb-3">
+    <input (keyup.enter)="login()" [(ngModel)]="inputValue" type="password" class="form-control"
+      placeholder="Wots the password pal?" aria-label="Recipient's username" aria-describedby="basic-addon2">
+    <div class="input-group-append">
+      <button (click)="login()" class="btn btn-outline-secondary" type="button">Login</button>
+    </div>
+  </div>
+</div>
+<p class="container" *ngIf="errorMessage">Whoopsie Daisy, try again!</p>

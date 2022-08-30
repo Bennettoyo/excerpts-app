@@ -21,20 +21,19 @@ export class HandleDataService {
       });
   }
 
-  private filteringExcerpts(value: string) {
-    this.httpClient.get<IExcerpt[]>(`${this.url}/excerpts`)
-      .subscribe(excerpts => {
-        this.excerptData.next(excerpts.filter(x => x.category === value));
-      });
-  }
+  // private filteringExcerpts(value: string) {
+  //   this.httpClient.get<IExcerpt[]>(`${this.url}/excerpts`)
+  //     .subscribe(excerpts => {
+  //       this.excerptData.next(excerpts.filter(x => x.category === value));
+  //     });
+  // }
 
-  filterExcerpts(value: string) {
-    // this.filteringExcerpts(value);
-     this.excerptData.pipe(
-      map(x => x.filter(s => s.category === value))
-    );
-    console.log(this.excerptData)
-  }
+  // filterExcerpts(value: string) {
+  //   this.filteringExcerpts(value);
+  //   this.excerptData.pipe(
+  //     map(x => x.filter(s => s.category === value))
+  //   );
+  // }
 
   getExcerpts(): Subject<IExcerpt[]> {
     this.refreshExcerpts();

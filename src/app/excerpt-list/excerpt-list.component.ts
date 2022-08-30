@@ -19,13 +19,13 @@ export class ExcerptListComponent implements OnInit {
     this.fetchExcerpts();
   }
 
-  onChange(value: string) {
-    if (value !== 'All') {
-      this.handleData.filterExcerpts(value);
-    } else {
-      this.fetchExcerpts()
-    }
-  }
+  // onChange(value: string) {
+  //   if (value !== 'All') {
+  //     this.handleData.filterExcerpts(value);
+  //   } else {
+  //     this.fetchExcerpts()
+  //   }
+  // }
 
   private fetchExcerpts(): void {
     this.excerptData = this.handleData.getExcerpts();

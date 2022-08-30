@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <span class="navbar-brand mb-0 h1">Expert Excerpts </span>
     <span class="navbar-text">
-      <app-modal>
+      <app-modal *ngIf="auth.isLoggedIn">
         <div header>Add An Excerpt</div>
         <div body>
           <app-excerpt-form></app-excerpt-form>
