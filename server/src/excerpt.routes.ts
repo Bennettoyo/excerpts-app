@@ -15,7 +15,6 @@ excerptRouter.get("/", async (_req, res) => {
 });
 
 excerptRouter.post("/", async (req, res) => {
-  console.log(req)
   try {
     const excerpt = req.body;
     const result = await collections.excerpts.insertOne(excerpt);

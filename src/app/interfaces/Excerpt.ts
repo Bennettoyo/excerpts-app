@@ -4,5 +4,5 @@ export interface IExcerpt {
   category: string,
   excerpt: string,
   thoughts: string,
-  date: number
+  date: string
 }

@@ -19,13 +19,13 @@ export class ExcerptListComponent implements OnInit {
     this.fetchExcerpts();
   }
 
-  // onChange(value: string) {
-  //   if (value !== 'All') {
-  //     this.handleData.filterExcerpts(value);
-  //   } else {
-  //     this.fetchExcerpts()
-  //   }
-  // }
+  onChange(value: string) {
+    if (value !== 'All') {
+      this.handleData.filterExcerpts(value);
+    } else {
+      this.fetchExcerpts()
+    }
+  }
 
   private fetchExcerpts(): void {
     this.excerptData = this.handleData.getExcerpts();
@@ -33,13 +33,12 @@ export class ExcerptListComponent implements OnInit {
 
 
   deleteExcerpt(id: string): void {
-    console.log(id);
     this.handleData.deleteExcerpt(id).subscribe({
       next: () => this.fetchExcerpts()
     });
   }
 
-  onScroll() {
-    console.log("scrolled!!");
-  }
+  // onScroll() {
+  //   console.log("scrolled!!");
+  // }
 }

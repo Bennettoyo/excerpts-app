@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { Output, EventEmitter } from '@angular/core';
 import { IExcerpt } from '../interfaces/Excerpt';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-excerpt',
@@ -19,7 +20,6 @@ export class ExcerptComponent implements OnInit {
   }
 
   delete(id: string | undefined) {
-    console.log("excerpt component", id);
     this.deleteEvent.emit(id);
   }
 

@@ -12,7 +12,7 @@ import { HandleDataService } from '../handle-data.service';
 })
 export class ExcerptFormComponent implements OnInit {
   public excerptForm: any;
-  public date: string = moment().format("Do MMM YYYY");
+  public date: string | undefined;
 
   constructor(private modalService: NgbModal, private handleData: HandleDataService) {
     this.excerptForm = new FormGroup({
@@ -20,7 +20,7 @@ export class ExcerptFormComponent implements OnInit {
       category: new FormControl('', [Validators.required]),
       excerpt: new FormControl('', [Validators.required]),
       thoughts: new FormControl('', [Validators.required]),
-      date: new FormControl(this.date),
+      date: new FormControl(moment(this.date).format()),
     });
   }
 
@@ -45,7 +45,7 @@ export class ExcerptFormComponent implements OnInit {
           category: new FormControl('', [Validators.required]),
           excerpt: new FormControl('', [Validators.required]),
           thoughts: new FormControl('', [Validators.required]),
-          date: new FormControl(this.date),
+          date: new FormControl(moment(this.date).format()),
         })
       );
     }
