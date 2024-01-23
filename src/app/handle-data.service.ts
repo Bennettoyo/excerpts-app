@@ -10,7 +10,7 @@ import * as moment from 'moment';
   providedIn: 'root'
 })
 export class HandleDataService {
-  private url = 'http://localhost:5200';
+  private url = 'https://excerptserver.jackbennetto.co.uk';
   private excerptData: Subject<IExcerpt[]> = new Subject();
 
   constructor(private httpClient: HttpClient) { }
@@ -47,7 +47,7 @@ export class HandleDataService {
   }
 
   createExcerpt(excerpt: IExcerpt): Observable<string> {
-    console.log(excerpt)
+    // console.log(excerpt)
     return this.httpClient.post(`${this.url}/excerpts`, excerpt, { responseType: 'text' });
   }
 
